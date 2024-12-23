@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Dark World</title>
+    <title>The Dark World 🌑</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Global styles */
@@ -15,115 +15,90 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+            overflow: hidden;
             height: 100vh;
             color: #fff;
             background: linear-gradient(135deg, #000000, #1c1c1c, #4a4a4a);
             position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
+        /* Animated Background */
         .background {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('https ://source.unsplash.com/1920x1080/?dark,abstract,tech') no-repeat center center fixed;
+            background: url('https://source.unsplash.com/1920x1080/?dark,abstract,tech') no-repeat center center fixed;
             background-size: cover;
-            filter: blur(10px) brightness(0.5);
+            filter: blur(8px) brightness(0.7);
             z-index: 1;
-            animation: backgroundMove 20s linear infinite;
+            animation: backgroundMove 15s linear infinite;
         }
 
         @keyframes backgroundMove {
             0% { background-position: 0 0; }
-            100% { background-position: 200% 200%; }
+            100% { background-position: 100% 100%; }
         }
 
+        /* Header */
         header {
-            position: relative;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 3;
             text-align: center;
-            margin-top: 20px;
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeIn 2s ease-in-out;
         }
 
         header h1 {
-            font-size: 4rem;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(0, 242, 254, 0.7);
-            animation: pulse 2s infinite;
+            font-size: 3.5rem;
             color: #00f2fe;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
         }
 
         header p {
             font-size: 1.5rem;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             margin-top: 10px;
-            color: #f0f0f0;
+            color: #ddd;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
-        .decorative {
-            position: relative;
-            z-index: 3;
-            margin-top: 30px;
-        }
-
-        .decorative span {
-            display: inline-block;
-            font-size: 2rem;
-            color: #00f2fe;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        nav {
+        /* Hamburger Menu */
+        .menu-icon {
             position: absolute;
             top: 20px;
             right: 20px;
             z-index: 3;
-        }
-
-        .hamburger {
-            font-size: 2rem;
             cursor: pointer;
-            color: #fff;
-            transition: color 0.3s;
-        }
-
-        .hamburger:hover {
+            font-size: 2rem;
             color: #00f2fe;
+            transition: transform 0.3s;
         }
 
+        .menu-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Navigation Menu */
         .nav-menu {
             display: none;
             position: absolute;
-            top: 50px;
-            right: 0;
-            background: rgba(0, 0, 0, 0.9);
+            top: 60px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
-            padding: 10px;
-            z-index: 4;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            animation: slideIn 0.5s ease;
-        }
-
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            z-index: 3;
+            padding: 15px;
+            animation: fadeIn 0.5s ease-in-out;
         }
 
         .nav-menu ul {
             list-style: none;
+            padding: 0;
         }
 
         .nav-menu ul li {
@@ -134,16 +109,155 @@
             text-decoration: none;
             color: #fff;
             font-size: 1.2rem;
-            padding: 10px;
-            display: block;
-            transition: color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
         }
 
         .nav-menu ul li a:hover {
-            color: #00f2fe;
-            transform: scale(1.1);
+            background-color: #00f2fe;
+            color: #000;
         }
 
+        /* Call to Action */
+        .btn-container {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            text-align: center;
+        }
+
+        .btn-container button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            color: #fff;
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            margin: 10px;
+        }
+
+        .btn-container button:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 255, 255, 0.4);
+            background: linear-gradient(90deg, #00f2fe, #4facfe);
+        }
+
+        /* Content Sections */
+        .content-section, .about-section, .contact-section, .harsh-world-section, .extra-section, .testimonials-section, .gallery-section, .calendar-section, .calculator-section {
+            display: none;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            right: 10%;
+            z-index: 3;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1s ease-in-out forwards;
+            border: 2px solid #00f2fe;
+        }
+
+        .content-section h2, .about-section h2, .contact-section h2, .harsh-world-section h2, .extra-section h2, .testimonials-section h2, .gallery-section h2, .calendar-section h2, .calculator-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00f2fe;
+        }
+
+        .content-section p, .about-section p, .contact-section p, .harsh-world-section p, .extra-section p, .testimonials-section p, .gallery-section p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+
+        /* Calculator Styles */
+        .calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .calculator input {
+            grid-column: span 4;
+            padding: 15px;
+            font-size: 1.5rem;
+            text-align: right;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .calculator button {
+            padding: 20px;
+            font-size: 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .calculator button:hover {
+            background: #00f2fe;
+            color: #000;
+        }
+
+        /* Calendar Styles */
+        .calendar {
+            margin-top: 20px;
+        }
+
+        .calendar table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .calendar th, .calendar td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .calendar th {
+            background-color: #00f2fe;
+            color: #000;
+        }
+
+        .calendar td {
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .calendar td:hover {
+            background-color: #00f2fe;
+            color: #000;
+        }
+
+        /* Testimonials */
+        .testimonial {
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        /* Gallery */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 30%;
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Footer */
         footer {
             position: absolute;
             bottom: 10px;
@@ -154,21 +268,60 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
+        /* Animations */
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
 
-        .content-section {
-            display: none;
-            padding: 20px;
-            z-index: 2;
-            position: relative;
-            text-align: center;
+        @keyframes slideIn {
+            0% { transform: translateY(100%); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
         }
 
-        .content-section.active {
-            display: block;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            .menu-icon {
+                font-size: 1.5rem;
+            }
+
+            .nav-menu ul li a {
+                font-size: 1rem;
+            }
+
+            .btn-container button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .calculator button {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .btn-container button {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+
+            .calculator input {
+                font-size: 1rem;
+            }
+
+            .calculator button {
+                font-size: 1rem;
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -176,63 +329,273 @@
     <div class="background"></div>
 
     <header>
-        <h1>Welcome to The Dark World</h1>
-        <p>Uncover the secrets hidden in the shadows.</p>
-        <div class="decorative">
-            <span>✨</span>
-            <span>🌌</span>
-            <span>🌠</span>
-            <span>✨</span>
-        </div>
+        <h1>Welcome to The Dark World 🌑</h1>
+        <p>Uncover the secrets hidden in the shadows 💀</p>
     </header>
 
-    <nav>
-        <div class="hamburger" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i>
-        </div>
-        <div class="nav-menu" id="navMenu">
-            <ul>
-                <li><a href="#" onclick="showAbout()">About</a></li>
-                <li><a href="#" onclick="showContact()">Contact</a></li>
-                <li><a href="#" onclick="showContent('section1')">Section 1</a></li>
-                <li><a href="#" onclick="showContent('section2')">Section 2</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div id="section1" class="content-section">
-        <h2>Section 1</h2>
-        <p>This is the content for section 1. Here you can add more details about the topic.</p>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
     </div>
 
-    <div id="section2" class="content-section">
-        <h2>Section 2</h2>
-        <p>This is the content for section 2. You can elaborate on different aspects here.</p>
+    <div class="nav-menu" id="navMenu">
+        <ul>
+            <li><a href="#" onclick ="showAbout()">About Me 🕵️‍♂️</a></li>
+            <li><a href="#" onclick="showContact()">Contact Me 📞</a></li>
+            <li><a href="#" onclick="showHarshWorld()">The Harsh World 💥</a></li>
+            <li><a href="#" onclick="showTestimonials()">Testimonials 🗣️</a></li>
+            <li><a href="#" onclick="showGallery()">Gallery 🖼️</a></li>
+            <li><a href="#" onclick="showCalendar()">Calendar 📅</a></li>
+            <li><a href="#" onclick="showCalculator()">Calculator 🧮</a></li>
+        </ul>
     </div>
 
-    <footer>&copy; 2024 The Dark World. All rights reserved.</footer>
+    <div class="btn-container">
+        <button onclick="showSection()">Explore the Unknown 🔍</button>
+        <button onclick="alert('Stay tuned for more updates! 🔔')">Future Updates 📅</button>
+    </div>
+
+    <div class="content-section" id="content">
+        <h2>The Mystery Unveiled 🔓</h2>
+        <p>Step into a world of endless possibilities. Here, the dark meets the light, and the unknown becomes a thrilling adventure.</p>
+        <p>Experience the extraordinary through cutting-edge visuals, technology, and an immersive narrative.</p>
+        <button onclick="hideSection()">Close ❌</button>
+    </div>
+
+    <div class="about-section" id="about">
+        <h2>About Me ✨</h2>
+        <p>My name is Amanullah. I am a student, and my hobbies include editing, writing, and helping others. I revel in uncovering the dark secrets of our harsh society and bringing the truth to light.</p>
+        <button onclick="hideAbout()">Close ❌</button>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <h2>Contact Me 📧</h2>
+        <p>Feel free to reach out to me on Instagram:</p>
+        <a href="https://www.instagram.com/a.m_who?igsh=MXdodHp4NWJhbm92Nw==" target="_blank">
+            <i class="fab fa-instagram" style="font-size: 2rem;"></i>
+        </a>
+        <button onclick="hideContact()">Close ❌</button>
+    </div>
+
+    <div class="harsh-world-section" id="harshWorld">
+        <h2>The Harsh World 💔</h2>
+        <p>In today's society, the wealthy often evade justice, committing crimes that go unpunished. The disparity between the rich and the poor creates a system where the powerful manipulate the law to their advantage. This section explores various instances where the elite have escaped accountability, shedding light on the urgent need for reform and justice for all.</p>
+        <button onclick="hideHarshWorld()">Close ❌</button>
+    </div>
+
+    <div class="testimonials-section" id="testimonials">
+        <h2>User Testimonials 🌟</h2>
+ <p class="testimonial">"This site opened my eyes to the realities of our world!" - User A</p>
+        <p class="testimonial">"A thought-provoking experience that I will never forget." - User B</p>
+        <p class="testimonial">"The content is both engaging and enlightening." - User C</p>
+        <button onclick="hideTestimonials()">Close ❌</button>
+    </div>
+
+    <div class="gallery-section" id="gallery">
+        <h2>Gallery of Darkness 🖤</h2>
+        <div class="gallery">
+            <img src="https://source.unsplash.com/300x200/?dark,city" alt="Dark City">
+            <img src="https://source.unsplash.com/300x200/?dark,forest" alt="Dark Forest">
+            <img src="https://source.unsplash.com/300x200/?dark,abstract" alt="Dark Abstract">
+            <img src="https://source.unsplash.com/300x200/?dark,night" alt="Dark Night">
+            <img src="https://source.unsplash.com/300x200/?dark,art" alt="Dark Art">
+            <img src="https://source.unsplash.com/300x200/?dark,shadow" alt="Dark Shadow">
+        </div>
+        <button onclick="hideGallery()">Close ❌</button>
+    </div>
+
+    <div class="calendar-section" id="calendar">
+        <h2>Calendar 📅</h2>
+        <div class="calendar">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Sun</th>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                    </tr>
+                </thead>
+                <tbody id="calendarBody"></tbody>
+            </table>
+            <button onclick="addEvent()">Add Event</button>
+        </div>
+        <button onclick="hideCalendar()">Close ❌</button>
+    </div>
+
+    <div class="calculator-section" id="calculator">
+        <h2>Calculator 🧮</h2>
+        <div class="calculator">
+            <input type="text" id="calcInput" disabled>
+            <button onclick="clearCalc()">C</button>
+            <button onclick="appendToCalc('7')">7</button>
+            <button onclick="appendToCalc('8')">8</button>
+            <button onclick="appendToCalc('9')">9</button>
+            <button onclick="appendToCalc('/')">/</button>
+            <button onclick="appendToCalc('4')">4</button>
+            <button onclick="appendToCalc('5')">5</button>
+            <button onclick="appendToCalc('6')">6</button>
+            <button onclick="appendToCalc('*')">*</button>
+            <button onclick="appendToCalc('1')">1</button>
+            <button onclick="appendToCalc('2')">2</button>
+            <button onclick="appendToCalc('3')">3</button>
+            <button onclick="appendToCalc('-')">-</button>
+            <button onclick="appendToCalc('0')">0</button>
+            <button onclick="calculate()">=</button>
+            <button onclick="appendToCalc('+')">+</button>
+        </div>
+        <button onclick="hideCalculator()">Close ❌</button>
+    </div>
+
+    <div class="extra-section" id="extraContent">
+        <h2>Extra Content 🧠</h2>
+        <p>Here, we delve deeper into the themes of justice and inequality. Explore stories of those who have fought against the odds and made a difference in their communities.</p>
+        <p>Join us in our mission to bring awareness and inspire change.</p>
+        <button onclick="hideExtra()">Close ❌</button>
+    </div>
+
+    <footer>&copy; <span id="currentYear"></span> The Dark World. All rights reserved.</footer>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        // Section show and hide functions
+        function showSection() {
+            document.getElementById('content').style.display = 'block';
+        }
+
+        function hideSection() {
+            document.getElementById('content').style.display = 'none';
         }
 
         function showAbout() {
-            alert("About section is under construction.");
+            document.getElementById('about').style.display = 'block';
+        }
+
+        function hideAbout() {
+            document.getElementById('about').style.display = 'none';
         }
 
         function showContact() {
-            alert("Contact section is under construction.");
+            document.getElementById('contact').style.display = 'block';
         }
 
-        function showContent(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
+        function hideContact() {
+            document.getElementById('contact').style.display = 'none';
+        }
+
+        function showHarshWorld() {
+            document.getElementById('harshWorld').style.display = 'block';
+        }
+
+        function hideHarshWorld() {
+            document.getElementById('harshWorld').style.display = 'none';
+        }
+
+        function showTestimonials() {
+            document.getElementById('testimonials').style.display = 'block';
+        }
+
+        function hideTestimonials() {
+            document.getElementById('testimonials').style.display = 'none';
+        }
+
+        function showGallery() {
+            document.getElementById('gallery').style.display = 'block';
+        }
+
+        function hideGallery() {
+            document.getElementById('gallery').style.display = 'none';
+        }
+
+        function showCalendar() {
+            document.getElementById('calendar').style.display = 'block';
+            generateCalendar();
+        }
+
+        function hideCalendar() {
+            document.getElementById('calendar').style.display = 'none';
+        }
+
+        function showCalculator() {
+            document.getElementById('calculator').style.display = 'block';
+        }
+
+        function hideCalculator() {
+            document.getElementById('calculator').style.display = 'none';
+        }
+
+        function showExtra() {
+            document.getElementById('extraContent').style.display = 'block';
+        }
+
+        function hideExtra() {
+            document.getElementById('extraContent').style.display = 'none';
+        }
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Dynamic footer year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Calendar functions
+        function generateCalendar() {
+            const calendarBody = document.getElementById('calendarBody');
+            const date = new Date();
+            const month = date.getMonth();
+            const year = date.getFullYear();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+            calendarBody.innerHTML = '';
+
+            let row = document.createElement('tr');
+            for (let i = 0; i < firstDay; i++) {
+                row.appendChild(document.createElement('td'));
+            }
+
+            for (let day = 1; day <= daysInMonth; day++) {
+                const cell = document.createElement('td');
+                cell.textContent = day;
+                cell.onclick = () => addEventToDate(day);
+                row.appendChild(cell);
+
+                if ((day + firstDay) % 7 === 0) {
+                    calendarBody.appendChild(row);
+                    row = document.createElement('tr');
+                }
+            }
+            calendarBody.appendChild(row);
+        }
+
+        function addEventToDate(day) {
+            const event = prompt(`Add an event for ${day}:`);
+            if (event) {
+                alert(`Event "${event}" added for ${day}.`);
+            }
+        }
+
+        // Calculator functions
+        function appendToCalc(value) {
+            document.getElementById('calcInput').value += value;
+        }
+
+        function clearCalc() {
+            document.getElementById('calcInput').value = '';
+        }
+
+        function calculate() {
+            const input = document.getElementById('calcInput').value;
+            try {
+                const result = eval(input);
+                document.getElementById('calcInput').value = result;
+            } catch (error) {
+                alert('Invalid calculation');
+            }
         }
     </script>
 </body>
-</html> 
+</html>
